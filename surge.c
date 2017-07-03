@@ -15,7 +15,20 @@ int setresuid(uid_t ruid, uid_t euid, uid_t suid);
 int setresgid(gid_t rgid, gid_t egid, gid_t sgid);
 
 enum objtype {
+	// fs mount
 	MOUNT = 1,
+	// configured network interface
+	NIC,
+	// getty console
+	CONSOLE,
+	// a service to be restarted
+	DAEMON,
+	// a one time job
+	TASK,
+	// an event to broadcast
+	EVENT,
+	// a value to track
+	VALUE,
 };
 
 struct config {
